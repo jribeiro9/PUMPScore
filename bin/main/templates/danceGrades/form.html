@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+<title>New DanceGrade</title>
+</head>
+<body>
+	<div layout:fragment="content">
+		<h1 th:if="${danceGrade.id == null}">New DanceGrade</h1>
+		<h1 th:if="${danceGrade.id != null}">Edit DanceGrade</h1>
+		<hr />
+		<form th:action="@{/danceGrades}"
+			th:method="@{${danceGrade.id == null} ? 'post' : 'put'}"
+			th:object="${danceGrade}">
+			<input type="hidden" th:field="*{id}" />
+
+			<div class="form-group">
+				<label for="name">Name</label> <input id="name" name="name"
+					type="text" class="form-control" th:field="*{name}" />
+			</div>
+			<div class="form-group">
+				<label for="perfects">Perfects</label> <input id="perfects" name="perfects"
+					type="text" class="form-control" th:field="*{perfects}" />
+			</div>			 
+
+			<button type="submit" class="btn btn-success">Save</button>
+			<a th:href="@{/danceGrades}" class="btn btn-default">Back</a>
+		</form>
+	</div>
+</body>
+</html>

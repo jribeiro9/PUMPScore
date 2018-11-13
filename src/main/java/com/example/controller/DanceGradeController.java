@@ -23,7 +23,7 @@ import com.example.service.ModuleService;
 import com.example.service.DanceGradeService;
 
 @Controller
-@RequestMapping("/dancegrade")
+@RequestMapping("/danceGrades")
 public class DanceGradeController {
 	
 	@Autowired
@@ -38,7 +38,7 @@ public class DanceGradeController {
 		List<DanceGrade> all = danceGradeService.findAll();
 		model.addAttribute("listDanceGrade", all);
 		model.addAttribute("");
-		return "danceGrade/index";
+		return "danceGrades/index";
 	}
 	
 	// Tela de Show DanceGrade
@@ -48,7 +48,7 @@ public class DanceGradeController {
 			DanceGrade danceGrade = danceGradeService.findOne(id).get();
 			model.addAttribute("danceGrade", danceGrade);
 		}
-		return "danceGrade/show";
+		return "danceGrades/show";
 	}
 
 	// Tela com Formulario de New DanceGrade
@@ -59,7 +59,7 @@ public class DanceGradeController {
 		List<Module> all = moduleService.findAll();
 		model.addAttribute("modules", all);
 		
-		return "danceGrade/form";
+		return "danceGrades/form";
 	}
 	
 	// Processamento do formulario New DanceGrade (ou Alter DanceGrade) 
@@ -99,7 +99,7 @@ public class DanceGradeController {
 		} catch (Exception e) {
 			throw new ServiceException(e.getMessage());
 		}
-		return "danceGrade/form";
+		return "danceGrades/form";
 	}
 	
 	@PutMapping

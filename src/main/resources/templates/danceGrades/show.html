@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+		<meta name="description" content="" />
+		<meta name="author" content="" />
+		<title>Show DanceGrades</title>
+	</head>
+	<body>
+		<div layout:fragment="content">
+			<h1>Show DanceGrade</h1>
+			<hr />
+			<div class="form-group"> 
+				<label for="name">Name: </label>  
+				<span th:text="${danceGrade.name}"></span> 
+			</div> 
+			<div class="form-group"> 
+				<label for="perfects">Perfects: </label>  
+				<span th:text="${danceGrade.perfects}"></span> 
+			</div>  
+			<a th:href="@{/danceGrades}" class="btn btn-primary" >Back to list DanceGrades</a> 
+			<a th:href="@{/danceGrades/{id}/edit(id = ${danceGrade.id})}" class="btn btn-info">Edit this record</a>
+			<a th:href="${danceGrade.id +'/delete'}" class="btn btn-danger">Delete this record</a>
+			
+		</div>
+	</body>
+</html>
