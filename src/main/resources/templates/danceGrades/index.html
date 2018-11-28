@@ -19,14 +19,24 @@
 		<table class="table">
 			<thead>
 				<tr>
-					<th>Name</th> 
-					<th>Perfects</th> 
+					<th>Name</th>
+					<th>Level</th> 
+					<th>Perfects</th>
+					<th>Greats</th>
+					<th>Goods</th>
+					<th>Bads</th>
+					<th>Miss</th> 
 				</tr>
 			</thead>
 			<tbody>
 				<tr th:each="danceGrade : ${listDanceGrade}">
-					<td th:text="${danceGrade.name}"></td> 
-					<td th:text="${danceGrade.perfects}"></td>   
+					<td th:text="${danceGrade.name}"></td>
+					<td th:text="${danceGrade.level}"></td> 
+					<td th:text="${danceGrade.perfects}"></td>
+					<td th:text="${danceGrade.greats}"></td>
+					<td th:text="${danceGrade.goods}"></td>
+					<td th:text="${danceGrade.bads}"></td>
+					<td th:text="${danceGrade.miss}"></td>   
 					<td>
 							<a th:href="@{/danceGrades/{id}(id = ${danceGrade.id})}" class="btn btn-primary" >Show</a> 
 					 		<a th:href="@{/danceGrades/{id}/edit(id = ${danceGrade.id})}" class="btn btn-info">Edit</a> 

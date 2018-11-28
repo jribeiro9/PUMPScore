@@ -25,9 +25,31 @@
 					type="text" class="form-control" th:field="*{name}" />
 			</div>
 			<div class="form-group">
+				<label for="level">Level</label> <input id="level" name="level"
+					type="text" class="form-control" th:field="*{level}" />
+			</div>
+			<div class="form-group">
 				<label for="perfects">Perfects</label> <input id="perfects" name="perfects"
 					type="text" class="form-control" th:field="*{perfects}" />
-			</div>			 
+			</div>
+			<div class="form-group">
+				<label for="great">Greats</label> <input id="greats" name="greats"
+					type="text" class="form-control" th:field="*{greats}" />
+			</div>
+			<div class="form-group">
+				<label for="goods">Goods</label> <input id="goods" name="goods"
+					type="text" class="form-control" th:field="*{goods}" />
+			</div>
+			<div class="form-group">
+				<label for="bads">Bads</label> <input id="bads" name="bads"
+					type="text" class="form-control" th:field="*{bads}" />
+			</div>
+			<div class="form-group">
+				<label for="miss">Miss</label> <input id="miss" name="miss"
+					type="text" class="form-control" th:field="*{miss}" />
+			</div>
+			
+					 
 
 			<button type="submit" class="btn btn-success">Save</button>
 			<a th:href="@{/danceGrades}" class="btn btn-default">Back</a>
